@@ -1837,8 +1837,8 @@ function NSPProject(data) {
 	var _dateStart = new Date();
 	var _date =  new Date();
 	var _minutes = 0;
-	var _evStart = (nsParams.isExam) ? new Date(nsParams.examStartDate) : null;
-	var _evEnd = (nsParams.isExam) ? new Date(nsParams.examEndDate) : null;
+	var _evStart = (nsParams.examStartDate) ? new Date(nsParams.examStartDate) : null;
+	var _evEnd = (nsParams.examEndDate) ? new Date(nsParams.examEndDate) : null;
 
 	var _iem = false;
 
@@ -2275,12 +2275,11 @@ function handleChangeDiagramName(e) {
 }
 
 function prep() {
-	_a = (function(w,x){var z={};for(y in x){z[y]=w[x[y]]};return z})(this, {"emchange":"ub","refresh":"re"});
+	_a = (function (w, x) {	var z = {}; for (y in x) { z[y] = x[y]}; return z })(this, { "emchange": ub, "refresh": re });
 }
 
-
 function eventProc(o) {
-	try {_a[o["action"]](project);}catch(e){}
+	try {_a[o["action"]](project);}catch(e){console.error(e.message)}
 }
 
 function va(x) {
